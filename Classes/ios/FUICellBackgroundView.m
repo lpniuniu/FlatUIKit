@@ -40,7 +40,7 @@
 	CGContextSetAllowsAntialiasing(c, YES);
 	CGContextSetShouldAntialias(c, YES);
 
-	CGRect realBounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - self.separatorHeight)
+	CGRect realBounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - self.separatorHeight);
     CGSize radii = CGSizeMake(self.cornerRadius, self.cornerRadius);
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:realBounds
                                                      byRoundingCorners:self.roundedCorners

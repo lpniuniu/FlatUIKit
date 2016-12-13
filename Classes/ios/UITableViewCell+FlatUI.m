@@ -25,13 +25,13 @@
                       selectedColor:(UIColor *)selectedColor
                     roundingCorners:(UIRectCorner)corners {
     FUICellBackgroundView* backgroundView = [FUICellBackgroundView new];
-    backgroundView.backgroundColor = color;
+    backgroundView.foregroundColor = color;
     backgroundView.roundedCorners = corners;
     self.backgroundView = backgroundView;
     
     FUICellBackgroundView* selectedBackgroundView = [FUICellBackgroundView new];
+    selectedBackgroundView.foregroundColor = selectedColor;
     selectedBackgroundView.roundedCorners = corners;
-    selectedBackgroundView.backgroundColor = selectedColor;
     self.selectedBackgroundView = selectedBackgroundView;
     
     //The labels need a clear background color or they will look very funky

@@ -21,6 +21,7 @@
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.backgroundColor = [UIColor clearColor];
 	}
 	return self;
 }
@@ -39,7 +40,7 @@
 	CGContextSetLineWidth(c, lineWidth);
 	CGContextSetAllowsAntialiasing(c, YES);
 	CGContextSetShouldAntialias(c, YES);
-
+    
 	CGRect realBounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - self.separatorHeight);
     CGSize radii = CGSizeMake(self.cornerRadius, self.cornerRadius);
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:realBounds
@@ -51,8 +52,14 @@
     CGContextAddPath(c, path);
     CGContextClip(c);
     
-    CGContextSetFillColorWithColor(c, self.backgroundColor.CGColor);
+    
+    
+    
+    CGContextSetFillColorWithColor(c, self.foregroundColor.CGColor);
     CGContextFillRect(c, realBounds);
+    
+    
+    
     
     CGContextRestoreGState(c);
 }
